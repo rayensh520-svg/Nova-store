@@ -14,15 +14,14 @@ class NovaStoreApp extends StatelessWidget {
       title: 'NOVA STORE',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFFF9F6F0), // البيج الراقي
+        primaryColor: const Color(0xFF6A1B29), // اللون العنابي الفاخر
+        scaffoldBackgroundColor: const Color(0xFFF9F6F0), // لون البيج الفاخر
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF6A1B29), // العنابي الفاخر
-          primary: const Color(0xFF6A1B29),
-          secondary: const Color(0xFFD4B28C),
+          seedColor: const Color(0xFF6A1B29),
+          secondary: const Color(0xFFF9F6F0),
         ),
       ),
-      // جعل شاشة تسجيل الدخول هي البداية للتطبيق
+      // اجعل شاشة تسجيل الدخول هي البداية
       home: const LoginScreen(),
     );
   }
