@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'register_screen.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -14,7 +16,7 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // عنوان المتجر الفاخر
+              // شعار أو اسم المتجر
               const Text(
                 'NOVA STORE',
                 textAlign: TextAlign.center,
@@ -22,12 +24,12 @@ class LoginScreen extends StatelessWidget {
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF6A1B29), // عنابي فاخر
-                  letterSpacing: 2,
+                  letterSpacing: 2.0,
                 ),
               ),
               const SizedBox(height: 8),
               const Text(
-                'بوابتك للتجارة الإلكترونية الموثوقة',
+                'سوق متعدد البائعين بتصميم فاخر',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14,
@@ -67,7 +69,7 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
 
-              // زر الدخول
+              // زر تسجيل الدخول
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF6A1B29),
@@ -78,11 +80,33 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // منطق تسجيل الدخول لاحقاً
+                  // مؤقتاً للتجربة: الانتقال للشاشة الرئيسية عند الضغط
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  );
                 },
                 child: const Text(
                   'تسجيل الدخول',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // زر الانتقال إلى شاشة إنشاء حساب جديد
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                  );
+                },
+                child: const Text(
+                  'ليس لديكِ حساب؟ انضمي إلينا كبائع أو مشتري',
+                  style: TextStyle(
+                    color: Color(0xFF6A1B29),
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -92,4 +116,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
